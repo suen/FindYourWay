@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tic-Tac-Toe The Game</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+    .box { 
+		border: 1px solid #080808;
+		margin-right: 10px;
+		margin-bottom: 20px;
+	}
+	
+	.board {
+		text-align:center;
+	}
+	
+	.board td{
+		border: 1px solid #dfdfdf;
+		background-color:#ffffff;
+		font-family: monotype;
+		font-size: 3em;
+		text-align: center;
+		width: 65px;
+		height: 65px;
+	}
+	
+	.board td:hover {
+		background-color:#dfdfdf;
+	}
+	
+	.board td.playerA {
+		background-color:#5bb75b;
+		color: #ffffff;
+	}
+	.board td.playerB {
+		background-color:#2f96b4;
+		color: #ffffff;
+	}
+	.board td.playerC {
+		background-color:#6f5499;
+		color: #ffffff;
+	}
+	.time-td {
+		width: 20px
+	}
+	.game-container{
+		width:600px; 
+		float: left;
+		height: 500px;
+		background: #dfdfdf;
+		margin-right: 15px;
+	}
+	#start-game-button {
+		margin: 200px 0px 0px 200px;
+		width: 200px;
+		height: 50px;
+	}
+	
+    </style>
+
+
+
+  </head>
+  <body>
+
+    <div class="navbar navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <h1 style="color:#ffffff;">TIC-TAC-TOE [ The Game ]</h1>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div id="game-initialize-container" class="game-container">
+		 <button class="btn btn-large btn-primary" id="start-game-button">START GAME</button>
+      </div>
+      
+
+       
+       <div style="width:40%; float: left; height: 500px; overflow: auto">
+       <h3>Network Stream</h3>
+		<table class="table table-bordered" id="network-stream">
+			<!--<tr><td class="time-td">11:12</td><td>Game begins</td></tr>
+			<tr><td>hi</td></tr> -->
+		</table>
+       
+       </div>
+		
+		<div style="width: 100%; clear: both; padding-top:50px">
+		</div>
+
+      <hr>
+      <hr>
+
+      <footer>
+        <p class="text-center">©TicTacToe 2014</p>
+      </footer>
+    </div> <!-- /container -->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/model.js"></script>
+	<script src="js/game.js"></script>
+
+</body>
+</html>

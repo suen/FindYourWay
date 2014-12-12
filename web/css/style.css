@@ -1,0 +1,153 @@
+  .box { 
+		border: 1px solid #080808;
+		margin-right: 10px;
+		margin-bottom: 20px;
+	}
+	
+	.broadcast-reply-table-container {
+		height: 300px;
+		overflow: auto;
+		border-bottom: 5px solid #dfdfdf;
+	}
+
+	.chatbox{
+		width:200px; 
+		height: 300px; 
+		border: 1px solid #dfdfdf; 
+		position: absolute; 
+		z-index: 2; 
+		background-color:#ffffff;
+		margin: 100px 0px 0px 100px;
+		opacity: 0.9;
+		overflow: hidden;
+	}
+	.chatbox h4 {
+		background: #1f1f1f;
+		color: #ffffff;
+		margin: 0px;
+		padding: 10px;
+		height: 40px;
+		float: left;
+	}
+	
+	.title {
+		width: 100%;
+		background: #1f1f1f;
+		height: 40px;
+	}
+	
+	.control{
+		width: 30px;
+		height: 30px;
+		float: right;
+		background: #1f1f1f;
+		color: #ffffff;
+		border: 1px solid #dfdfdf;
+	}
+	
+	.chatbox div {
+		width: 100%;
+		float: left;
+	}
+	.chatbox p {
+		padding: 5px;
+		margin: 0px;
+	}
+	
+	.chatbox .chat-stream {
+		height: 220px;
+		overflow: auto;
+		border-bottom: 1px solid;
+	}
+ 	.chatbox .chat-input {
+		height: 40px;
+		border-bottom: 1px solid;
+	}
+ 	.chatbox .chat-input input {
+		height: 100%;
+		width: 150px;
+ 	}
+ 	.chatbox .chat-input button {
+ 		width: 48px;
+ 		height: 100%;
+ 	}
+ 	.small-container {
+ 		width: 100%;
+ 		height: 100px;
+ 		background-color: #dfdfdf;
+ 		padding: 20px;
+ 	}
+ 	
+ 	    .box { 
+		border: 1px solid #080808;
+		margin-right: 10px;
+		margin-bottom: 20px;
+	}
+	
+	.board {
+		text-align:center;
+	}
+	
+	.board td{
+		border: 1px solid #dfdfdf;
+		background-color:#ffffff;
+		font-family: monotype;
+		font-size: 3em;
+		text-align: center;
+		width: 65px;
+		height: 65px;
+	}
+	
+	.board td:hover {
+		background-color:#dfdfdf;
+	}
+	
+	.board td.playerA {
+		background-color:#5bb75b;
+		color: #ffffff;
+	}
+	.board td.playerB {
+		background-color:#2f96b4;
+		color: #ffffff;
+	}
+	.board td.playerC {
+		background-color:#6f5499;
+		color: #ffffff;
+	}
+
+	.board td.wall {
+		background-color: #A52A2A;
+		color: #A52A2A;
+	}
+
+	.board td.but {
+		background-color: #33FFCC;
+		color: #000000;
+	}
+
+	.board td.robot {
+		background-color: #ffffff;
+		color: #000000;
+	}
+
+	.board td.portal {
+		background-color: #663399;
+		color: #ffffff;
+	}
+
+	.time-td {
+		width: 20px
+	}
+	.game-container{
+		width:500px; 
+		float: left;
+		height: 520px;
+		padding: 0px 0px 0px 50px;
+		background: #dfdfdf;
+		margin-right: 15px;
+	}
+	#start-game-button {
+		margin: 200px 0px 0px 200px;
+		width: 200px;
+		height: 50px;
+	}

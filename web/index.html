@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Find-Your-Way</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+   
+  </head>
+  <body>
+  <div id="thickbox" style="display: none; width:100%; height: 100%; position: absolute; margin: 0px 0px 0px 0px; background-color: #ffffff; float: left; z-index:5">
+  		<h2 id="thickbox-message" style="text-align: center; margin-top: 200px;">Another web client logged in</h1>
+  </div>
+    <div class="navbar navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <h1 style="color:#ffffff;">Find-Your-Way</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-3" style="background: #efefef; float: left; margin-right: 30px;">
+       <h3>Network Stream</h3>
+       <div style="height: 300px; overflow: auto; margin: 0px 0px 0px 0px;">
+		<table class="table table-bordered" id="network-stream">
+			<!--<tr><td class="time-td">11:12</td><td>Game begins</td></tr>
+			<tr><td>hi</td></tr> -->
+		</table>
+		</div>
+       </div>
+      <div id="table-container" class="game-container" style="display: block">
+			<h3 id="game-title"></h3>
+			<table class="board">
+				<tr>
+					<td id="1-1" class="board-block"></td>
+					<td id="1-2" class="board-block"></td>
+					<td id="1-3" class="board-block" ></td>				
+					<td id="1-4" class="board-block" ></td>
+					<td id="1-5" class="board-block" ></td>
+					<td id="1-6" class="board-block" ></td>				
+				</tr>
+				<tr>
+					<td id="2-1" class="board-block" ></td>
+					<td id="2-2" class="board-block" ></td>
+					<td id="2-3" class="board-block" ></td>				
+					<td id="2-4" class="board-block" ></td>
+					<td id="2-5" class="board-block" ></td>
+					<td id="2-6" class="board-block" ></td>				
+				</tr>
+				<tr>
+					<td id="3-1" class="board-block" ></td>
+					<td id="3-2" class="board-block" ></td>
+					<td id="3-3" class="board-block" ></td>				
+					<td id="3-4" class="board-block" ></td>
+					<td id="3-5" class="board-block" ></td>
+					<td id="3-6" class="board-block" ></td>				
+				</tr>
+				<tr>
+					<td id="4-1" class="board-block" ></td>
+					<td id="4-2" class="board-block" ></td>
+					<td id="4-3" class="board-block" ></td>				
+					<td id="4-4" class="board-block" ></td>
+					<td id="4-5" class="board-block" ></td>
+					<td id="4-6" class="board-block" ></td>				
+				</tr>
+				<tr>
+					<td id="5-1" class="board-block" ></td>
+					<td id="5-2" class="board-block" ></td>
+					<td id="5-3" class="board-block" ></td>				
+					<td id="5-4" class="board-block" ></td>
+					<td id="5-5" class="board-block" ></td>
+					<td id="5-6" class="board-block" ></td>				
+				</tr>
+				<tr>
+					<td id="6-1" class="board-block" ></td>
+					<td id="6-2" class="board-block" ></td>
+					<td id="6-3" class="board-block" ></td>				
+					<td id="6-4" class="board-block" ></td>
+					<td id="6-5" class="board-block" ></td>
+					<td id="6-6" class="board-block" ></td>				
+				</tr>
+			</table>
+			<h4></h4>
+			<p><button id="next" class="btn btn-primary btn-lg">Next</button></p>
+	   </div>
+       </div>
+		
+		<div style="padding-top:50px">
+		</div>
+
+      <hr>
+      <hr>
+
+      <footer>
+        <p class="text-center">Find-Your-Way 2014, all rights lefts out</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/model.js"></script>
+	<script src="js/map.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+</html>
