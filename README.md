@@ -1,4 +1,4 @@
 FindYourWay
 ===========
 
-A robot finding its way to the world with reinforcement learning
+A robot finding its way to the world with reinforcement Qlearning
