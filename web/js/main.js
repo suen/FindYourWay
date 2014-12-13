@@ -1,3 +1,4 @@
+
 Main = function() {
 
 	this.connect = new Connect(this);
@@ -33,7 +34,7 @@ Main = function() {
 				break;
 			case "ROBOT_MIND":
 				Logger.log("ROBOT_MIND received : " + content);
-				//this.map.setBoard(content)
+				this.map.setMindmap(content)
 				break;
 		}
 	};

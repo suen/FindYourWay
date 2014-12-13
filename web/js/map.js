@@ -1,31 +1,16 @@
 
 Map = function (controller) {
 	this.board = [];
-	
-	$("#confirm-move-btn").click(function(){
-		$(this).text("Wait");
-		$(this).addClass("disabled");
-		move = Map.instance().lastmove
-		Logger.log("Sending move " + move)
-		move[0]--;
-		move[1]--;
-		//Map.instance().controller.connect.socket.send("TTTS PLAYER_MOVE " + move.toString());
-		Main.Instance().sendGameMove(move.toString());
-	});
+	this.mindmap = [];
 	
 	this.createBoard = function() {
 		for(i=0; i<6; i++) {
-			row = [];
-			for(j=0; j<6; j++) {
-				td_ids = "#" + (i+1).toString() + "-" + (j+1).toString()
-				$(td_ids).click(function(evnt) {
-					Map.instance().boardClickedEvent(this, evnt);
-				});
-				row.push("");
-			}
-			this.board.push(row);
+			this.board.push(["","","","","",""]);
+			this.mindmap.push(["","","","","",""]);
 		};
-		Logger.log("board initialized");
+		this.displayBoard()
+		this.displayMindmap()
+		Logger.log("boards initialized");
 	};
 
 	this.setBoard = function(board) {
@@ -39,8 +24,15 @@ Map = function (controller) {
 		this.displayBoard()
 	};
 
-	this.getBoard = function() {
-		return JSON.stringigy(this.board);
+	this.setMindmap = function(mindmap) {
+		if (typeof(mindmap) == "string") {
+			mindmap = mindmap.replace(/\'/g, "\"")
+			newMindmap = JSON.parse(mindmap)
+		} else {
+			newMindmap = mindmap
+		}
+		this.mindmap = newMindmap
+		this.displayMindmap()
 	};
 
 	this.displayBoard = function() {
@@ -66,6 +58,15 @@ Map = function (controller) {
 		} 
 	}
 	
+	this.displayMindmap = function() {
+		for(i=0; i<6; i++) {
+			row = this.mindmap[i]
+			for(j=0; j<6; j++) {
+				td_ids = "#t" + (i+1).toString() + "-" + (j+1).toString()
+				$(td_ids).text(row[j])
+			}
+		} 
+	}
 }
 
 Map.instance = function() {
@@ -73,14 +74,3 @@ Map.instance = function() {
 		Map.self = new Map(Map.main)
 	return Map.self
 }
-
-/**
-
-//b = [["X", "O", "X", "", "", ""],["", "", "", "O", "", ""],["", "", "", "", "", ""],["", "", "", "", "", ""],["", "", "", "", "", ""],["", "", "", "", "", ""]]
-
-$(document).ready(function() {
-	m = Main();
-});
-
-**/
-

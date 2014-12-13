@@ -146,6 +146,15 @@
 		background: #dfdfdf;
 		margin-right: 15px;
 	}
+
+	.mind-map{
+		background: #ffffff; 
+	}
+
+	.mind-map .board td{
+		font-size: 1.3em;
+	}
+
 	#start-game-button {
 		margin: 200px 0px 0px 200px;
 		width: 200px;

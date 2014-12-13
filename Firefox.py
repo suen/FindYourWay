@@ -66,7 +66,9 @@ class Firefox:
 		self.net = Network.Instance();
 		self.net.setWebSocketPort(9000);
 		self.webclient = None
+		self.mindmap = [["", "", "", "", "", ""],["", "", "", "", "", ""],["", "", "", "", "", ""],["", "", "", "", "", ""],["", "", "", "", "", ""],["", "", "", "", "", ""]]
 		self.moves = [(5,5), (5,4), (5,3), (5,2), (5,1), (5,0), (4,0), ( 3,0), ( 2,0), (1,0)]
+		self.movemind = [0, 0, 0, 0, 0, 0, 0, 0, 0, 1000]
 
 		t = Thread(target=self.thread)
 		t.setDaemon(True)
@@ -132,9 +134,25 @@ class Test:
 	def onNext(self):
 		print "onNext called, do your run() stuff here"
 		'''Demo '''
-		env = self.firefox.getEnvironment()
-		self.firefox.sendMsg("MAP", env)
+		map,mind = self.getNextStep()
+		self.firefox.sendMsg("MAP", map)
+		self.firefox.sendMsg("ROBOT_MIND", mind)
 		pass
+
+	def getNextStep(self):
+		map = self.firefox.getEnvironment()
+		mind = self.firefox.mindmap
+
+		move = self.firefox.moves
+		movemind = self.firefox.movemind
+
+		map[move[0][0]][move[0][1]] = "r"
+		mind[move[0][0]][move[0][1]] = str(movemind[0])
+		
+		del move[0]
+		del movemind[0]
+		return map, mind
+
 
 	def start(self):
 		#call this method at the very end, its blocking IO
