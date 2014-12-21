@@ -68,12 +68,46 @@ class Robot:
 		self._memory.matrix[x][y] = value
 	
 	def move_robot(self,map):
-		#if we already process all the adjacent case we only got 50% chance of making a no random move
-		if(self.know_all_adjacent_case() and random.randrange(0,11) > 5):
-			#exploitation
-			self.exploitation_move()
+		if(self.is_teleport_case()):
+			self.teleportation()
 		else:
-			self.random_move(map)
+			#if we already process all the adjacent case we only got 50% chance of making a no random move
+			if(self.know_all_adjacent_case() and random.randrange(0,11) > 5):
+				#exploitation
+				self.exploitation_move()
+			else:
+				self.random_move(map)
+
+	def is_teleport_case(self):
+		x = self.get_x()
+		y = self.get_y()
+		#T1
+		if(x == 3 and y == 4):
+			return True
+		#goal 1
+		if(x == 5 and y == 0):
+			return True
+		#goal 2
+		if(x == 0 and y == 1):
+			return True
+		return False
+
+
+	def teleportation(self):
+		x = self.get_x()
+		y = self.get_y()
+		#T1
+		if(x == 3 and y == 4):
+			self.set_x(4)
+			self.set_y(1)
+		#goal 1
+		if(x == 5 and y == 0):
+			self.set_x(5)
+			self.set_y(5)
+		#goal 2
+		if(x == 0 and y == 1):
+			self.set_x(5)
+			self.set_y(5)
 
 	def renforcement_calcul(self,map):
 		x = self.get_x()
@@ -93,7 +127,10 @@ class Robot:
 		#distance from current position to goal p2
 		distance_p2 = sqrt(pow(x_p2 - x,2) + pow(y_p2 - y,2)) 
 		recompense = map.matrix[y_p1][x_p1]["value"] / (distance_p1+0.01) + map.matrix[y_p2][x_p2]["value"] / (distance_p2+0.01)
-		q_learning = (1 - alpha) *  self.get_memory(x,y) + gamma*(recompense + max([self.get_memory(x+self._directions[i]["x"],y+self._directions[i]["y"]) for i in range(4)])) 
+		best_adjacent_case = max([self.get_memory(x+self._directions[i]["x"],y+self._directions[i]["y"]) for i in range(4)])
+		if(best_adjacent_case == None):
+			best_adjacent_case = 0	
+		q_learning = (1 - alpha) *  self.get_memory(x,y) + gamma*(recompense + best_adjacent_case) 
 		self.set_memory(x,y,int(q_learning))		
 
 
